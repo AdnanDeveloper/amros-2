@@ -49,6 +49,15 @@ const Contact = () => {
             >
               Instagram <MdArrowOutward />
             </a>
+
+            <a
+              href="https://wa.me/919082816570"
+              target="_blank"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              Whatsapp <MdArrowOutward />
+            </a>
           </div>
           <div className="contact-box">
             <h2>

@@ -59,6 +59,11 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
+          <a href="https://wa.me/919082816570" target="_blank">
+            <FaWhatsapp />
+          </a>
+        </span>
+        <span>
           <a href="https://github.com/AdnanDeveloper" target="_blank">
             <FaGithub />
           </a>
@@ -66,11 +71,6 @@ const SocialIcons = () => {
         <span>
           <a href="https://www.linkedin.com/in/adnan-moriswala-website-developer/" target="_blank">
             <FaLinkedinIn />
-          </a>
-        </span>
-        <span>
-          <a href="https://wa.me/919082816570" target="_blank">
-            <FaWhatsapp />
           </a>
         </span>
         <span>
