@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap');
+
+.hero-text-reveal {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-text-reveal-content {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 5%;
+  margin: 0 auto;
+}
+
+.hero-text-reveal h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-text-reveal .hero-line {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.hero-text-reveal .margin-1 {
+  margin-left: 10%;
+}
+
+.hero-text-reveal .margin-2 {
+  margin-left: 20%;
+}
+
+.hero-text-reveal .margin-3 {
+  margin-left: 0%;
+}
+
+.hero-text-reveal .hero-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero-text-reveal .hero-letter {
+  color: rgba(255, 255, 255, 0.15);
+  display: inline-block;
+  transition: color 0.1s ease-in-out;
+}
+
+/* Text Selection background color */
+.hero-text-reveal ::selection {
+  background: #fe8b27;
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-text-reveal h2 {
+    font-size: clamp(1.8rem, 4.5vw, 4rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-text-reveal {
+    height: auto;
+    padding: 5vh 0;
+  }
+
+  .hero-text-reveal-content {
+    padding: 0 20px;
+  }
+
+  .hero-text-reveal .margin-1 {
+    margin-left: 5%;
+  }
+
+  .hero-text-reveal .margin-2 {
+    margin-left: 10%;
+  }
+
+  .hero-text-reveal h2 {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-text-reveal .margin-1 {
+    margin-left: 0%;
+  }
+
+  .hero-text-reveal .margin-2 {
+    margin-left: 0%;
+  }
+
+  /* On very small devices, it might act differently */
+  .hero-text-reveal .hero-line {
+    display: inline;
+  }
+}

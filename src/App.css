@@ -1,0 +1,359 @@
+.section-container {
+  width: 1300px;
+}
+
+.title,
+.para {
+  font-kerning: none;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+@media only screen and (max-width: 1600px) {
+  .section-container {
+    width: 1200px;
+    max-width: calc(100% - 160px);
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .section-container {
+    width: 900px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .section-container {
+    width: 500px;
+    max-width: var(--cWidth);
+  }
+
+}
+
+.scroll-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.scroll-hero-canvas {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/frames/frame_00_delay-0.066s.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.scroll-hero-canvas canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+.scroll-hero-left p {
+  margin: 0;
+  color: var(--accentColor);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-family: "Geist", sans-serif;
+}
+
+.scroll-hero-left h1 {
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: 500;
+  font-family: "Geist", sans-serif;
+  color: white;
+}
+
+/* RIGHT SIDE */
+
+.scroll-hero-right {
+  text-align: right;
+}
+
+.scroll-hero-specialized {
+  color: #ff8c00;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.scroll-hero-role {
+  font-size: 64px;
+  font-weight: 600;
+  color: #e5e5e5;
+  line-height: 1.1;
+}
+
+.scroll-hero canvas {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+
+
+
+
+/* HERO */
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 8vw;
+}
+
+.hero-left h1,
+.hero-right h1 {
+  font-size: 64px;
+  color: white;
+}
+
+.hero-left p,
+.hero-right p {
+  color: #ff8d1d;
+}
+
+.hero-right {
+  text-align: right;
+}
+
+/* ABOUT */
+
+/* about initially hidden */
+.about-mobile {
+  display: none;
+}
+
+.about-content {
+  opacity: 0;
+  pointer-events: none;
+  padding-top: 100px;
+}
+
+/* about text right side */
+
+.about-content .about-me {
+  margin-left: auto;
+  max-width: 500px;
+}
+
+.about-content .about-me .para {
+  font-size: 1.5vw;
+  line-height: 1.9vw;
+}
+
+@media only screen and (min-width: 1950px) {
+  .about-content .about-me .para {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}
+
+
+/* Landing.css */
+
+
+
+
+
+.landing-info {
+  position: absolute;
+  right: 20%;
+  transform: translateX(50%);
+  /* bottom: 40px; */
+  /* top: inherit; */
+  z-index: 20;
+}
+
+.landing-info h3 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  color: var(--accentColor);
+  margin: 0;
+}
+
+.landing-info h2 {
+  margin: 0;
+  /* margin-top: -20px; */
+  margin-left: 20px;
+  font-family: "Geist", sans-serif;
+  font-weight: 600;
+  font-size: 43px;
+  line-height: 53px;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.landing-h2-info-1 {
+  position: absolute;
+  top: 0;
+}
+
+h2.landing-info-h2 {
+  color: #14b8a6;
+  font-size: 55px;
+  width: 120%;
+  margin: 0;
+  font-family: "Geist", sans-serif;
+  font-weight: 600;
+  position: relative;
+  margin-left: -5px;
+}
+
+.landing-h2-2 {
+  position: absolute;
+  top: 0;
+}
+
+.landing-info-h2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  z-index: 3;
+  /* background-image: linear-gradient(0deg,
+      var(--backgroundColor) 40%,
+      rgba(0, 0, 0, 0) 110%); */
+  top: 0;
+  left: 0;
+}
+
+
+@media (max-width: 768px) {
+  .scroll-hero {
+    height: 90vh;
+  }
+
+  .scroll-hero-canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none
+  }
+
+  .scroll-hero-canvas canvas {
+    width: 100%;
+    height: 560px !important;
+    margin-top: 80px;
+  }
+
+  .hero-content {
+    position: absolute;
+    inset: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  /* Left text at top of image */
+
+  .scroll-hero-left {
+    position: absolute;
+    top: 155px;
+    left: 20px;
+    z-index: 2;
+  }
+
+  /* Right content below image */
+
+  .landing-info {
+    position: relative;
+    width: 100%;
+    margin-top: calc(70vh + 20px);
+    text-align: center;
+    right: 59%;
+  }
+
+  .landing-info h2 {
+    margin-top: -4px;
+  }
+
+  .landing-info h3 {
+    text-align: center;
+  }
+
+  .landing-info h2 {
+    justify-content: center;
+  }
+
+  .scroll-hero-left h1 {
+    font-size: 35px;
+    line-height: 35px;
+  }
+
+  .scroll-hero-left p {
+    margin: 0;
+    color: var(--accentColor);
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-family: "Geist", sans-serif;
+  }
+
+  .landing-info h3 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: var(--accentColor);
+    margin-top: -48px !important;
+    margin-bottom: 0px;
+  }
+
+  .about-section {
+    position: relative;
+    margin-top: 80vh;
+    /* push below hero banner */
+    padding: 0px 20px 50px 20px !important;
+    z-index: 1;
+  }
+
+  .about-mobile {
+    display: block;
+    padding: 40px 20px;
+  }
+
+  .about-section {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+
+    width: 100%;
+    padding: 50px 20px;
+    margin-top: 40px;
+
+    /* background: #020b18; */
+    /* match your site background */
+  }
+
+  .about-section .title {
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+
+  .about-section .para {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}

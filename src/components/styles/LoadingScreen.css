@@ -1,0 +1,204 @@
+/* ============================
+   LOADING SCREEN — Premium Intro
+   ============================ */
+
+.ls-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999999;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.ls-riser {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 220vw;
+  height: 160vh;
+  background: #050810;
+  border-top-left-radius: 50% 28%;
+  border-top-right-radius: 50% 28%;
+  z-index: 1;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ── Center content wrapper ── */
+
+.ls-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  z-index: 3;
+}
+
+/* ── Main text ── */
+
+.ls-text {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(48px, 10vw, 140px);
+  font-weight: 700;
+  color: #075b97;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  perspective: 600px;
+  text-shadow: 0 0 26px rgba(254, 139, 41, 0.32);
+  will-change: text-shadow;
+}
+
+.ls-char {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+  transform-origin: center bottom;
+}
+
+/* ── Loading counter ── */
+
+.ls-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 400;
+  color: rgba(180, 180, 180, 0.35);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ls-counter-num {
+  font-variant-numeric: tabular-nums;
+  min-width: 2.4ch;
+  text-align: right;
+}
+
+.ls-counter-pct {
+  font-size: 0.85em;
+}
+
+/* ── Decorative horizontal lines ── */
+
+.ls-line {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: rgba(5, 8, 16, 0.14);
+  transform-origin: center;
+  transform: scaleX(0);
+  will-change: transform, opacity;
+  z-index: 2;
+}
+
+.ls-line-top {
+  top: 38%;
+}
+
+.ls-line-bot {
+  bottom: 38%;
+}
+
+/* ── Corner accents ── */
+
+.ls-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: rgba(253, 139, 40, 0.25);
+  border-style: solid;
+  border-width: 0;
+  z-index: 2;
+}
+
+.ls-corner-tl {
+  top: 24px;
+  left: 24px;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.ls-corner-tr {
+  top: 24px;
+  right: 24px;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.ls-corner-bl {
+  bottom: 24px;
+  left: 24px;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.ls-corner-br {
+  bottom: 24px;
+  right: 24px;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 768px) {
+  .ls-text {
+    font-size: clamp(40px, 14vw, 80px);
+    letter-spacing: 0.08em;
+  }
+
+  .ls-line {
+    left: 5%;
+    right: 5%;
+  }
+
+  .ls-line-top {
+    top: 35%;
+  }
+
+  .ls-line-bot {
+    bottom: 35%;
+  }
+
+  .ls-corner {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ls-corner-tl,
+  .ls-corner-tr {
+    top: 16px;
+  }
+
+  .ls-corner-bl,
+  .ls-corner-br {
+    bottom: 16px;
+  }
+
+  .ls-corner-tl,
+  .ls-corner-bl {
+    left: 16px;
+  }
+
+  .ls-corner-tr,
+  .ls-corner-br {
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ls-text {
+    font-size: clamp(36px, 16vw, 60px);
+  }
+
+  .ls-counter {
+    font-size: 12px;
+  }
+}

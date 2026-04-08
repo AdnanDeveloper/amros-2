@@ -1,0 +1,224 @@
+.card-swap-section {
+    width: 100%;
+    min-height: 80vh;
+    background: var(--backgroundColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 5vw 200px 5vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-swap-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 60px;
+}
+
+.card-swap-text {
+    flex: 1;
+    max-width: 450px;
+    padding-right: 25px;
+}
+
+.card-swap-text h2 {
+    font-size: 70px;
+    font-weight: 400;
+    background: linear-gradient(292deg, #d97b2a, #1488db);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin: 0;
+}
+
+.card-swap-text p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.card-swap-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 620px;
+    min-width: 650px;
+}
+
+/* CardSwap core */
+
+.card-swap-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(5%, 15%);
+    transform-origin: bottom right;
+    perspective: 900px;
+    overflow: visible;
+}
+
+.card-swap-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #111;
+    transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header bar */
+
+.card-swap-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.card-swap-icon {
+    font-size: 18px;
+}
+
+/* Image fills the rest */
+
+.card-swap-card img {
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.35s ease;
+}
+
+/* Hover overlay */
+
+.card-swap-overlay {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.card-swap-card:hover img {
+    opacity: 0.3;
+}
+
+.card-swap-card:hover .card-swap-overlay {
+    opacity: 1;
+}
+
+/* Drag-to-swap cursor */
+
+.card-swap-container {
+    cursor: grab;
+}
+
+.card-swap-container:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 1024px) {
+    .card-swap-layout {
+        gap: 30px;
+    }
+
+    .card-swap-wrapper {
+        min-width: 450px;
+        min-height: 480px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-swap-section {
+        min-height: auto;
+        padding: 60px 12px;
+        overflow: hidden;
+    }
+
+    .card-swap-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-swap-text {
+        max-width: 100%;
+    }
+
+    .card-swap-text h2 {
+        width: 100%;
+        font-size: 45px;
+        line-height: 45px;
+        margin-top: 0px;
+    }
+
+    .card-swap-text p {
+        font-size: 16px;
+    }
+
+    .card-swap-wrapper {
+        min-width: unset;
+        width: 100%;
+        min-height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-swap-container {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        transform: scale(0.65);
+        transform-origin: center center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-swap-wrapper {
+        min-height: 300px;
+    }
+
+    .card-swap-container {
+        transform: scale(0.5);
+    }
+
+    .card-swap-text h2 {
+        width: 100%;
+        font-size: 45px;
+        line-height: 45px;
+        margin-bottom: 20px;
+    }
+}

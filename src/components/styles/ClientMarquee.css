@@ -1,0 +1,96 @@
+/* src/components/styles/ClientMarquee.css */
+.client-marquee-section {
+  padding: 60px 0;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.client-marquee-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  cursor: grab;
+  /* Use mask-image for fading edges */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+.client-marquee-container:active {
+  cursor: grabbing;
+}
+
+.client-marquee-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.client-logo-wrapper {
+  /* Ensure a specific number of logos show up on standard desktop */
+  flex: 0 0 auto; 
+  width: 280px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(100%) opacity(0.4);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  padding: 10px;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.client-logo-wrapper:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+.client-logo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none; /* Prevent native image drag */
+}
+
+@media (max-width: 1024px) {
+  .client-logo-wrapper {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .client-logo-wrapper {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-logo-wrapper {
+    width: 150px;
+    height: 80px;
+    padding: 10px;
+  }
+}

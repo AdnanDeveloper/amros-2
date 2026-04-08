@@ -1,0 +1,207 @@
+/* ============================
+   SERVICE REVEAL SECTION
+   ============================ */
+
+.sr-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #0a0e17;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text wrapper */
+.sr-text-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+.sr-heading {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(42px, 6vw, 90px);
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.sr-dark,
+.sr-gray {
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.1s ease;
+}
+
+/* Services list (revealed after zoom) */
+.sr-services-list {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #0a0e17;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0 40px;
+  opacity: 0;
+}
+
+.sr-service-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 28px 8vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  cursor: default;
+  transition: background 0.3s ease;
+}
+
+.sr-service-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sr-service-item:hover {
+  background: rgba(255, 141, 29, 0.04);
+}
+
+.sr-service-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex: 1;
+}
+
+.sr-service-number {
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+  padding-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.sr-service-item:hover .sr-service-number {
+  color: #ff8d1d;
+}
+
+.sr-service-title {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(32px, 4vw, 64px);
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.sr-service-item:hover .sr-service-title {
+  color: #ff8d1d;
+}
+
+.sr-service-right {
+  max-width: 300px;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.sr-service-desc {
+  font-family: "Geist", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Cursor-following hover image wrapper — appended to body */
+.sr-hover-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease;
+  will-change: transform;
+}
+
+.sr-hover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(255, 141, 29, 0.15);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 1024px) {
+  .sr-service-left {
+    gap: 24px;
+  }
+
+  .sr-service-item {
+    padding: 24px 5vw;
+  }
+
+  .sr-service-right {
+    max-width: 240px;
+  }
+
+  .sr-hover-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sr-heading {
+    font-size: clamp(32px, 8vw, 52px);
+  }
+
+  .sr-service-item {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 6vw;
+  }
+
+  .sr-service-left {
+    gap: 16px;
+  }
+
+  .sr-service-title {
+    font-size: clamp(24px, 7vw, 38px);
+  }
+
+  .sr-service-right {
+    max-width: 100%;
+    padding-left: 54px;
+  }
+
+  .sr-service-number {
+    padding-top: 6px;
+  }
+
+  .sr-hover-wrapper {
+    display: none;
+  }
+}
