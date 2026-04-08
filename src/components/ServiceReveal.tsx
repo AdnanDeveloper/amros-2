@@ -128,7 +128,11 @@ const ServiceReveal = () => {
           >
             <div className="sr-service-left">
               <span className="sr-service-number">{service.number}</span>
-              <h3 className="sr-service-title">{service.title}</h3>
+              <h3 className="sr-service-title">
+                <a href="https://wa.me/919082816570" target="_blank" rel="noopener noreferrer">
+                  {service.title}
+                </a>
+              </h3>
             </div>
             <div className="sr-service-right">
               <p className="sr-service-desc">{service.description}</p>
