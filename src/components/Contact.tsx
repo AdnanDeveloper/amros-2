@@ -25,7 +25,7 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com/raxx21"
+              href="https://github.com/AdnanDeveloper"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -33,7 +33,7 @@ const Contact = () => {
               Github <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com/in/rajesh-chityal-2a70141b3"
+              href="https://www.linkedin.com/in/adnan-moriswala-website-developer/"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -42,7 +42,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="https://www.instagram.com/therajeshchityal"
+              href="https://www.instagram.com/amros_official/"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
