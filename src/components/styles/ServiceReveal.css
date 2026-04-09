@@ -184,27 +184,37 @@
     font-size: clamp(32px, 8vw, 52px);
   }
 
+  .sr-services-list {
+    padding: 60px 0 20px;
+  }
+
   .sr-service-item {
     flex-direction: column;
-    gap: 12px;
-    padding: 10px 6vw;
+    gap: 6px;
+    padding: 25px 6vw;
   }
 
   .sr-service-left {
-    gap: 16px;
+    gap: 12px;
   }
 
   .sr-service-title {
-    font-size: clamp(24px, 7vw, 38px);
+    font-size: clamp(20px, 6vw, 32px);
   }
 
   .sr-service-right {
     max-width: 100%;
-    padding-left: 54px;
+    padding-left: 0;
+  }
+
+  .sr-service-desc {
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .sr-service-number {
-    padding-top: 6px;
+    padding-top: 4px;
+    font-size: 12px;
   }
 
   .sr-hover-wrapper {
