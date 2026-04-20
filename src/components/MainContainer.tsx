@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect, useState } from "react";
+import { PropsWithChildren, useEffect, useState, lazy, Suspense } from "react";
 import About from "./About";
 import Career from "./Career";
 import Contact from "./Contact";
@@ -9,12 +9,12 @@ import Work from "./Work";
 import setSplitText from "./utils/splitText";
 import ScrollHero from "./ScrollHero";
 import ServiceReveal from "./ServiceReveal";
-import FallingText from "./FallingText";
 import ProcessSection from "./CardSwap";
 import ClientMarquee from "./ClientMarquee";
 import HeroTextReveal from "./HeroTextReveal";
 
-
+// Lazy-load heavy below-the-fold sections
+const FallingText = lazy(() => import("./FallingText"));
 
 const MainContainer = ({ children }: PropsWithChildren) => {
   const [isDesktopView, setIsDesktopView] = useState<boolean>(
@@ -50,7 +50,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <ServiceReveal />
             <Work />
             <ProcessSection />
-            <FallingText />
+            <Suspense fallback={null}>
+              <FallingText />
+            </Suspense>
             <Contact />
           </div>
         </div>

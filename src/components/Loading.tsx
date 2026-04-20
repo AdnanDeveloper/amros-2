@@ -46,7 +46,7 @@ const Loading = ({ percent }: { percent: number }) => {
     <>
       <div className="loading-header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          <img src="public/images/amros-logo.png" className="amros-logo"></img>
+          <img src="/images/amros-logo.webp" className="amros-logo" fetchPriority="high" />
         </a>
         <div className={`loaderGame ${clicked && "loader-out"}`}>
           <div className="loaderGame-container">

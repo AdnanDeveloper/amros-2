@@ -7,14 +7,14 @@ import "./styles/ClientMarquee.css";
 gsap.registerPlugin(Draggable);
 
 const CLIENTS = [
-  { id: 1, src: "/public/images/client/1.png", alt: "Client 1 Logo" },
-  { id: 2, src: "/public/images/client/2.png", alt: "Client 2 Logo" },
-  { id: 3, src: "/public/images/client/3.png", alt: "Client 3 Logo" },
-  { id: 4, src: "/public/images/client/4.png", alt: "Client 4 Logo" },
-  { id: 5, src: "/public/images/client/5.png", alt: "Client 5 Logo" },
-  { id: 6, src: "/public/images/client/6.png", alt: "Client 6 Logo" },
-  { id: 7, src: "/public/images/client/7.png", alt: "Client 7 Logo" },
-  { id: 8, src: "/public/images/client/8.png", alt: "Client 7 Logo" },
+  { id: 1, src: "/images/client/1.png", alt: "Client 1 Logo" },
+  { id: 2, src: "/images/client/2.png", alt: "Client 2 Logo" },
+  { id: 3, src: "/images/client/3.png", alt: "Client 3 Logo" },
+  { id: 4, src: "/images/client/4.png", alt: "Client 4 Logo" },
+  { id: 5, src: "/images/client/5.png", alt: "Client 5 Logo" },
+  { id: 6, src: "/images/client/6.png", alt: "Client 6 Logo" },
+  { id: 7, src: "/images/client/7.png", alt: "Client 7 Logo" },
+  { id: 8, src: "/images/client/8.png", alt: "Client 8 Logo" },
 ];
 
 export default function ClientMarquee() {
@@ -112,7 +112,7 @@ export default function ClientMarquee() {
         <div className="client-marquee-track" ref={trackRef}>
           {displayClients.map((client, idx) => (
             <div className="client-logo-wrapper" key={idx}>
-              <img src={client.src} alt={client.alt} />
+              <img src={client.src} alt={client.alt} loading="lazy" />
             </div>
           ))}
         </div>

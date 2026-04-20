@@ -47,7 +47,7 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          <img src="public/images/amros-logo.png" className="amros-logo"></img>
+          <img src="/images/amros-logo.webp" className="amros-logo" fetchPriority="high" />
         </a>
         {/* <a
           href="mailto:rajeshchittyal21@gmail.com"
