@@ -20,7 +20,7 @@ const projectsData: Record<string, any[]> = {
     {
       title: "BDazzle",
       category: "Fashion Ecommerce",
-      tools: "Wordpress, Woocommerce, Custom Design, Responsive",
+      tools: "Wordpress, Product Enquiry, Custom Design, Responsive",
       fullPageImage: "/images/work/bdazzle.webp",
     },
     {
@@ -38,10 +38,9 @@ const projectsData: Record<string, any[]> = {
     {
       title: "21 Alloys",
       category: "Industrial B2B Website",
-      tools: "Wordpress, Custom Theme, SEO, Metal Weight Calculator",
+      tools: "Wordpress, Custom Theme, SEO, Keyword Research, Rank 1 in Google for Multiple Keywords",
       fullPageImage: "/images/work/21alloys.webp",
     },
-
     {
       title: "Burhani Decor",
       category: "Interior & Wallpaper Store",
