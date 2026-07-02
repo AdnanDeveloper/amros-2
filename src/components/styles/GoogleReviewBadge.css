@@ -1,0 +1,226 @@
+/* ── Google Review Badge ── */
+
+.google-review-badge {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  font-family: "Geist", "Inter", -apple-system, sans-serif;
+}
+
+/* ── Collapsed Toggle Pill ── */
+.grb-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: grb-pulse 3s ease-in-out infinite;
+}
+
+.grb-toggle:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.google-review-badge.expanded .grb-toggle {
+  display: none;
+}
+
+.grb-toggle-rating {
+  font-size: 15px;
+  font-weight: 700;
+  color: #F5A623;
+}
+
+.grb-toggle-stars {
+  font-size: 13px;
+  color: #F5A623;
+  letter-spacing: -1px;
+}
+
+.grb-google-icon {
+  flex-shrink: 0;
+}
+
+/* ── Expanded Card ── */
+.grb-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 220px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: scale(0.8) translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: bottom left;
+}
+
+.google-review-badge.expanded .grb-card {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Close button */
+.grb-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.grb-close:hover {
+  color: #333;
+}
+
+/* ── Rating Row ── */
+.grb-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.grb-score {
+  font-size: 28px;
+  font-weight: 700;
+  color: #F5A623;
+  line-height: 1;
+}
+
+.grb-stars {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.grb-star {
+  flex-shrink: 0;
+}
+
+/* ── Total review count ── */
+.grb-total {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* ── Powered by Google ── */
+.grb-powered {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.grb-google-text {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -0.3px;
+}
+
+/* ── Review CTA Button ── */
+.grb-review-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  justify-content: center;
+  padding: 10px 16px;
+  background: #1a2235;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.2px;
+}
+
+.grb-review-btn:hover {
+  background: #0d1520;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.grb-btn-google-icon {
+  flex-shrink: 0;
+}
+
+/* ── Pulse animation ── */
+@keyframes grb-pulse {
+  0%, 100% {
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.15),
+      0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.15),
+      0 1px 4px rgba(0, 0, 0, 0.1),
+      0 0 0 6px rgba(245, 166, 35, 0.12);
+  }
+}
+
+/* ── Responsive ── */
+@media only screen and (max-width: 768px) {
+  .google-review-badge {
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .grb-card {
+    width: 200px;
+    padding: 16px;
+  }
+
+  .grb-score {
+    font-size: 24px;
+  }
+
+  .grb-star {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ── Desktop: move to bottom-right, above the "GET IN TOUCH" link ── */
+@media only screen and (min-width: 769px) {
+  .google-review-badge {
+    left: auto;
+    right: 3%;
+    bottom: 100px;
+  }
+
+  .grb-card {
+    left: auto;
+    right: 0;
+    transform-origin: bottom right;
+  }
+}

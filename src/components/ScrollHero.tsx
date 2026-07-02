@@ -128,13 +128,31 @@ const ScrollHero = () => {
 
             /* -----------------------------
                Load remaining frames
+               (throttled so this doesn't compete for bandwidth
+               with the JS bundle, fonts and character model on
+               first load — big source of "page never finishes
+               loading" on slower connections)
             ----------------------------- */
 
-            for (let i = 1; i < frameCount; i++) {
+            const CONCURRENCY = 4;
+            let nextToQueue = 1;
+            let loadedCount = 0;
+            const remaining = frameCount - 1;
+
+            const queueNext = () => {
+                if (nextToQueue >= frameCount) return;
+                const i = nextToQueue++;
                 const img = new Image();
+                img.fetchPriority = "low";
+                img.onload = img.onerror = () => {
+                    loadedCount++;
+                    if (loadedCount < remaining) queueNext();
+                };
                 img.src = framePath(i);
-                images.push(img);
-            }
+                images[i] = img;
+            };
+
+            for (let c = 0; c < CONCURRENCY; c++) queueNext();
 
             /* -----------------------------
                Scroll timeline

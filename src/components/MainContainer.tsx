@@ -12,6 +12,7 @@ import ServiceReveal from "./ServiceReveal";
 import ProcessSection from "./CardSwap";
 import ClientMarquee from "./ClientMarquee";
 import HeroTextReveal from "./HeroTextReveal";
+import GoogleReviewBadge from "./GoogleReviewBadge";
 
 // Lazy-load heavy below-the-fold sections
 const FallingText = lazy(() => import("./FallingText"));
@@ -38,6 +39,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Cursor />
       <Navbar />
       <SocialIcons />
+      <GoogleReviewBadge />
       {isDesktopView && children}
       <div id="smooth-wrapper">
         <div id="smooth-content">

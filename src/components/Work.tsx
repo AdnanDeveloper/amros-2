@@ -63,24 +63,30 @@ const projectsData: Record<string, any[]> = {
   ],
   "Brand Creation": [
     {
-      title: "Brand Project 1",
-      category: "Branding",
-      tools: "Illustrator, Photoshop",
-      image: "/images/placeholder.png",
+      title: "Sequeira Construction LLP",
+      category: "Brand Creation & Identity",
+      tools: "Photoshop, Illustrator, Modern Branding",
+      image: "/images/work/sequeira_brand_showcase.png",
     },
     {
-      title: "Brand Project 2",
-      category: "Identity",
-      tools: "Figma, Illustrator",
-      image: "/images/placeholder.png",
+      title: "Ravagers Football Club",
+      category: "Sports Branding & Jersey Design",
+      tools: "Illustrator, Photoshop, Apparel Design",
+      image: "/images/work/ravagers_brand_showcase.png",
+    },
+    {
+      title: "Health Stories",
+      category: "Brand Creation & Apparel",
+      tools: "Illustrator, Photoshop, Merchandise Design",
+      image: "/images/work/health_stories_brand_showcase.png",
     }
   ],
   "Web & SM Creatives": [
     {
-      title: "Creative Project 1",
-      category: "Social Media",
-      tools: "After Effects, Photoshop",
-      image: "/images/placeholder.png",
+      title: "Universe Glass Hub",
+      category: "Company Catalogue Design",
+      tools: "InDesign, Photoshop, Print Design",
+      image: "/images/work/universe_glass_catalog_showcase.png",
     },
     {
       title: "Creative Project 2",

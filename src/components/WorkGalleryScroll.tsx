@@ -23,24 +23,24 @@ const TABS: { id: WorkGalleryTabId; label: string }[] = [
 /** Swap paths per category when you have dedicated assets; reuses project shots for now. */
 const GALLERIES: Record<WorkGalleryTabId, { src: string; alt: string }[]> = {
   websites: [
-    { src: "/images/Solidx.png", alt: "Solid Starters — platform" },
-    { src: "/images/radix.png", alt: "Radix — e-commerce" },
-    { src: "/images/bond.png", alt: "Bond Cancellation — automation" },
-    { src: "/images/sapphire.png", alt: "Sapphire — CRM" },
-    { src: "/images/Maxlife.png", alt: "Mpro — insurance" },
+    { src: "/images/Solidx.webp", alt: "Solid Starters — platform" },
+    { src: "/images/radix.webp", alt: "Radix — e-commerce" },
+    { src: "/images/bond.webp", alt: "Bond Cancellation — automation" },
+    { src: "/images/sapphire.webp", alt: "Sapphire — CRM" },
+    { src: "/images/Maxlife.webp", alt: "Mpro — insurance" },
   ],
   brand: [
-    { src: "/images/sapphire.png", alt: "Sapphire — brand system" },
-    { src: "/images/radix.png", alt: "Radix — retail identity" },
-    { src: "/images/Solidx.png", alt: "Solid Starters — product UI" },
-    { src: "/images/Maxlife.png", alt: "Mpro — campaign visuals" },
+    { src: "/images/sapphire.webp", alt: "Sapphire — brand system" },
+    { src: "/images/radix.webp", alt: "Radix — retail identity" },
+    { src: "/images/Solidx.webp", alt: "Solid Starters — product UI" },
+    { src: "/images/Maxlife.webp", alt: "Mpro — campaign visuals" },
   ],
   creatives: [
-    { src: "/images/bond.png", alt: "Bond — creative landing" },
-    { src: "/images/Solidx.png", alt: "Solid Starters — marketing site" },
-    { src: "/images/radix.png", alt: "Radix — seasonal creative" },
-    { src: "/images/sapphire.png", alt: "Sapphire — social & web" },
-    { src: "/images/Maxlife.png", alt: "Mpro — digital creatives" },
+    { src: "/images/bond.webp", alt: "Bond — creative landing" },
+    { src: "/images/Solidx.webp", alt: "Solid Starters — marketing site" },
+    { src: "/images/radix.webp", alt: "Radix — seasonal creative" },
+    { src: "/images/sapphire.webp", alt: "Sapphire — social & web" },
+    { src: "/images/Maxlife.webp", alt: "Mpro — digital creatives" },
   ],
 };
 
