@@ -62,8 +62,16 @@ const ScrollHero = () => {
 
                 currentFrame = frameIndex;
 
-                const img = images[frameIndex];
-                if (!img) return;
+                let img = images[frameIndex];
+                if (!img) {
+                    // Not downloaded yet — draw the nearest frame that is
+                    // loaded instead of freezing, so scrubbing stays smooth
+                    // while the rest of the sequence finishes loading.
+                    for (let offset = 1; offset < frameCount && !img; offset++) {
+                        img = images[frameIndex - offset] || images[frameIndex + offset];
+                    }
+                    if (!img) return;
+                }
 
                 const height =
                     window.innerWidth < 768
@@ -104,6 +112,13 @@ const ScrollHero = () => {
                 context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
             };
 
+            /** Re-runs render() for the current scroll position — used to
+             * redraw the instant a still-loading frame finally arrives. */
+            const forceRedraw = () => {
+                currentFrame = -1;
+                render();
+            };
+
             /* -----------------------------
                Load first frame immediately
             ----------------------------- */
@@ -134,7 +149,7 @@ const ScrollHero = () => {
                loading" on slower connections)
             ----------------------------- */
 
-            const CONCURRENCY = 4;
+            const CONCURRENCY = 6;
             let nextToQueue = 1;
             let loadedCount = 0;
             const remaining = frameCount - 1;
@@ -146,6 +161,7 @@ const ScrollHero = () => {
                 img.fetchPriority = "low";
                 img.onload = img.onerror = () => {
                     loadedCount++;
+                    forceRedraw();
                     if (loadedCount < remaining) queueNext();
                 };
                 img.src = framePath(i);
