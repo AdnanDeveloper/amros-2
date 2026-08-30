@@ -150,18 +150,18 @@
 
 .about-content .about-me {
   margin-left: auto;
-  max-width: 500px;
+  max-width: 560px;
 }
 
 .about-content .about-me .para {
-  font-size: 1.5vw;
-  line-height: 1.9vw;
+  font-size: 1.05rem;
+  line-height: 1.65rem;
 }
 
 @media only screen and (min-width: 1950px) {
   .about-content .about-me .para {
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
   }
 }
 

@@ -12,6 +12,12 @@ const TABS = [
 const projectsData: Record<string, any[]> = {
   "Websites / App": [
     {
+      title: "Krasava",
+      category: "Anti-Tarnish Jewellery Ecommerce",
+      tools: "Shopify, Mobile-first design, SEO Optimized, Content Management, Ai-Gen Product Images",
+      fullPageImage: "/images/work/krasava.webp",
+    },
+    {
       title: "White Camel",
       category: "Ecommerce Website",
       tools: "Wordpress, Woocommerce, Google Analytics, Mobile-first design, SEO Optimized",

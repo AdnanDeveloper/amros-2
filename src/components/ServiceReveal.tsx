@@ -106,15 +106,12 @@ const ServiceReveal = () => {
     <div ref={sectionRef} className="sr-section" id="services">
       <div ref={textWrapperRef} className="sr-text-wrapper">
         <h2 className="sr-heading">
-          <span className="sr-dark">What services</span>
+          <span className="sr-dark">Everything Your</span>
           <br />
-          <span className="sr-dark">Amros </span>
+          <span className="sr-dark">Business Needs to</span>
+          <br />
           <span ref={(el) => setGrayRef(el, 0)} className="sr-gray">
-            provide you
-          </span>
-          <br />
-          <span ref={(el) => setGrayRef(el, 1)} className="sr-gray">
-            actually
+            Move Forward
           </span>
         </h2>
       </div>

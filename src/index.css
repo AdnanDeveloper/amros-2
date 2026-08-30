@@ -94,6 +94,18 @@ body {
   overflow: hidden;
 }
 
+.split-line:empty {
+  min-height: 1rem;
+  display: block;
+}
+
+.para br,
+.about-me br {
+  display: block;
+  content: "";
+  margin-top: 14px;
+}
+
 .split-h2 {
   overflow: hidden;
   display: flex;
