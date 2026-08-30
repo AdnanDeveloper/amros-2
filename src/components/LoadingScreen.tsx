@@ -25,11 +25,11 @@ const LoadingScreen = () => {
     }
   }, []);
 
-  /* ── Fill timer: quick display (400ms) for smooth branding then start exit ── */
+  /* ── Fill timer: 1.8s allows the AMROS letter fill animation to complete gracefully ── */
   useEffect(() => {
     const fillTimer = setTimeout(() => {
       setFilled(true);
-    }, 400);
+    }, 1800);
 
     return () => clearTimeout(fillTimer);
   }, []);
@@ -38,7 +38,7 @@ const LoadingScreen = () => {
   useEffect(() => {
     if (!filled) return;
 
-    // Trigger initialFX immediately so content is prepared under riser
+    // Trigger initialFX immediately so main page content is ready under riser
     import("./utils/initialFX").then((module) => {
       if (module.initialFX) {
         module.initialFX();
@@ -51,21 +51,21 @@ const LoadingScreen = () => {
       },
     });
 
-    /* 1. Fade out the AMROS loader */
+    /* 1. Fade out the AMROS loader text */
     exitTl.to(loaderRef.current, {
       opacity: 0,
-      y: -20,
+      y: -25,
       filter: "blur(4px)",
-      duration: 0.3,
+      duration: 0.4,
       ease: "power3.in",
     });
 
-    /* 2. Curved dark bg sweeps up from bottom to fill the screen */
+    /* 2. Curved dark bg sweeps up smoothly to reveal screen */
     exitTl.to(
       riserRef.current,
       {
         yPercent: 0,
-        duration: 0.6,
+        duration: 0.8,
         ease: "power2.inOut",
       },
       ">-0.1"
