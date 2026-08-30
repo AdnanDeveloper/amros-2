@@ -231,8 +231,8 @@ export default function FallingText() {
         <section className="falling-text-section">
             <h2 className="falling-text-section-title">My Tech Stack</h2>
             <FallingTextEffect
-                text="React JavaScript HTML CSS GSAP WordPress Automation Shopify Mysql Activepieces Canva Cloudfare API Vercel Supabase Next.js"
-                highlightWords={["React", "Automation", "API", "WordPress", "GSAP"]}
+                text="React.js JavaScript HTML5 CSS3 GSAP WordPress Automation Shopify Mysql Canva Cloudfare API Vercel Supabase Next.js Activepieces"
+                highlightWords={["React", "Automation", "API", "WordPress", "Activepieces", "GSAP"]}
                 highlightClass="highlighted"
                 trigger="scroll"
                 backgroundColor="transparent"

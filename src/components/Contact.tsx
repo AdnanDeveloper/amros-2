@@ -17,7 +17,7 @@ const Contact = () => {
                 adnanmorris@gmail.com
               </a>
             </p>
-            <h4>Call Me</h4>
+            <h4>Get In Touch</h4>
             <a href="tel:9082816570" data-cursor="disable">
               +91 9082816570
             </a>

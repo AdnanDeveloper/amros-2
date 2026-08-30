@@ -101,10 +101,16 @@ const projectsData: Record<string, any[]> = {
       image: "/images/work/universe_glass_catalog_showcase.png",
     },
     {
-      title: "Creative Project 2",
-      category: "Marketing",
-      tools: "Premiere Pro, Figma",
-      image: "/images/placeholder.png",
+      title: "Krasava",
+      category: "Website Banner",
+      tools: "Canva, Ai Assist",
+      image: "/images/work/web-banner-krasava.webp",
+    },
+    {
+      title: "SM Dry Fruits",
+      category: "Ecommerce Product Image",
+      tools: "Canva, Photoshop",
+      image: "/images/work/web-product-sm-dry.webp",
     }
   ]
 };
