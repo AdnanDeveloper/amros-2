@@ -25,11 +25,11 @@ const LoadingScreen = () => {
     }
   }, []);
 
-  /* ── Wait for a full fill cycle (~3s), then mark as filled ── */
+  /* ── Fill timer: quick display (400ms) for smooth branding then start exit ── */
   useEffect(() => {
     const fillTimer = setTimeout(() => {
       setFilled(true);
-    }, 3000);
+    }, 400);
 
     return () => clearTimeout(fillTimer);
   }, []);
@@ -38,23 +38,25 @@ const LoadingScreen = () => {
   useEffect(() => {
     if (!filled) return;
 
+    // Trigger initialFX immediately so content is prepared under riser
+    import("./utils/initialFX").then((module) => {
+      if (module.initialFX) {
+        module.initialFX();
+      }
+    });
+
     const exitTl = gsap.timeline({
       onComplete: () => {
-        import("./utils/initialFX").then((module) => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
-        });
+        setIsLoading(false);
       },
     });
 
     /* 1. Fade out the AMROS loader */
     exitTl.to(loaderRef.current, {
       opacity: 0,
-      y: -30,
-      filter: "blur(6px)",
-      duration: 0.5,
+      y: -20,
+      filter: "blur(4px)",
+      duration: 0.3,
       ease: "power3.in",
     });
 
@@ -63,17 +65,14 @@ const LoadingScreen = () => {
       riserRef.current,
       {
         yPercent: 0,
-        duration: 1.1,
+        duration: 0.6,
         ease: "power2.inOut",
       },
-      ">-0.15"
+      ">-0.1"
     );
 
-    /* 3. Match overlay bg to riser so no white flash on removal */
+    /* 3. Match overlay bg to riser so no flash on removal */
     exitTl.set(overlayRef.current, { background: "#050810" });
-
-    /* 4. Brief hold on the dark filled screen, then we're done */
-    exitTl.to({}, { duration: 0.3 });
 
     return () => {
       exitTl.kill();

@@ -60,24 +60,30 @@ const projectsData: Record<string, any[]> = {
       tools: "Wordpress, Woocommerce, Product Filtering, Mobile-first",
       fullPageImage: "/images/work/smdry.webp",
     },
+    {
+      title: "Maitreya Capital",
+      category: "Investment / Financial Services Website",
+      tools: "Wordpress, Custom Design, SEO Optimized",
+      fullPageImage: "/images/work/Maitreya-Capital.webp",
+    },
   ],
   "Brand Creation": [
     {
       title: "Sequeira Construction LLP",
       category: "Brand Creation & Identity",
-      tools: "Photoshop, Illustrator, Modern Branding",
+      tools: "Canva, Photoshop, Modern Branding",
       image: "/images/work/sequeira_brand_showcase.png",
     },
     {
       title: "Ravagers Football Club",
       category: "Sports Branding & Jersey Design",
-      tools: "Illustrator, Photoshop, Apparel Design",
+      tools: "Canva, Ai Design, Apparel Design",
       image: "/images/work/ravagers_brand_showcase.png",
     },
     {
       title: "Health Stories",
       category: "Brand Creation & Apparel",
-      tools: "Illustrator, Photoshop, Merchandise Design",
+      tools: "Canva Pro, Merchandise Design",
       image: "/images/work/health_stories_brand_showcase.png",
     }
   ],

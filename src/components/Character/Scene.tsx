@@ -109,27 +109,42 @@ const Scene = () => {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
+      let animFrameId: number;
+      let isVisible = true;
+
+      const observer = new IntersectionObserver(([entry]) => {
+        isVisible = entry.isIntersecting;
+      }, { threshold: 0.05 });
+
+      if (canvasDiv.current) {
+        observer.observe(canvasDiv.current);
+      }
+
       const animate = () => {
-        requestAnimationFrame(animate);
-        if (headBone) {
-          handleHeadRotation(
-            headBone,
-            mouse.x,
-            mouse.y,
-            interpolation.x,
-            interpolation.y,
-            THREE.MathUtils.lerp
-          );
-          light.setPointLight(screenLight);
+        if (isVisible) {
+          if (headBone) {
+            handleHeadRotation(
+              headBone,
+              mouse.x,
+              mouse.y,
+              interpolation.x,
+              interpolation.y,
+              THREE.MathUtils.lerp
+            );
+            light.setPointLight(screenLight);
+          }
+          const delta = clock.getDelta();
+          if (mixer) {
+            mixer.update(delta);
+          }
+          renderer.render(scene, camera);
         }
-        const delta = clock.getDelta();
-        if (mixer) {
-          mixer.update(delta);
-        }
-        renderer.render(scene, camera);
+        animFrameId = requestAnimationFrame(animate);
       };
       animate();
       return () => {
+        cancelAnimationFrame(animFrameId);
+        observer.disconnect();
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();

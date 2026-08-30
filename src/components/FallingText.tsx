@@ -152,19 +152,38 @@ const FallingTextEffect: React.FC<FallingTextProps> = ({
         Runner.run(runner, engine);
         Render.run(render);
 
+        let animFrameId: number;
+        let isVisible = true;
+
+        const observer = new IntersectionObserver(([entry]) => {
+            isVisible = entry.isIntersecting;
+            if (isVisible) {
+                Runner.run(runner, engine);
+            } else {
+                Runner.stop(runner);
+            }
+        }, { threshold: 0.05 });
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
         const updateLoop = () => {
-            wordBodies.forEach(({ body, elem }) => {
-                const { x, y } = body.position;
-                elem.style.left = `${x}px`;
-                elem.style.top = `${y}px`;
-                elem.style.transform = `translate(-50%, -50%) rotate(${body.angle}rad)`;
-            });
-            Matter.Engine.update(engine);
-            requestAnimationFrame(updateLoop);
+            if (isVisible) {
+                wordBodies.forEach(({ body, elem }) => {
+                    const { x, y } = body.position;
+                    elem.style.left = `${x}px`;
+                    elem.style.top = `${y}px`;
+                    elem.style.transform = `translate(-50%, -50%) rotate(${body.angle}rad)`;
+                });
+            }
+            animFrameId = requestAnimationFrame(updateLoop);
         };
-        updateLoop();
+        animFrameId = requestAnimationFrame(updateLoop);
 
         return () => {
+            cancelAnimationFrame(animFrameId);
+            observer.disconnect();
             Render.stop(render);
             Runner.stop(runner);
             if (render.canvas && canvasContainerRef.current) {
@@ -212,7 +231,7 @@ export default function FallingText() {
         <section className="falling-text-section">
             <h2 className="falling-text-section-title">My Tech Stack</h2>
             <FallingTextEffect
-                text="React JavaScript HTML CSS GSAP WordPress Automation Shopify Mysql Activepieces Canva Cloudfare API Vercel"
+                text="React JavaScript HTML CSS GSAP WordPress Automation Shopify Mysql Activepieces Canva Cloudfare API Vercel Supabase Next.js"
                 highlightWords={["React", "Automation", "API", "WordPress", "GSAP"]}
                 highlightClass="highlighted"
                 trigger="scroll"

@@ -13,6 +13,7 @@ export default defineConfig({
           "vendor-react": ["react", "react-dom"],
           "vendor-gsap": ["gsap", "@gsap/react"],
           "vendor-three": ["three"],
+          "vendor-matter": ["matter-js"],
         },
       },
     },
