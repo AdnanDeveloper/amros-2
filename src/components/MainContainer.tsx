@@ -13,6 +13,7 @@ import ProcessSection from "./CardSwap";
 import ClientMarquee from "./ClientMarquee";
 import HeroTextReveal from "./HeroTextReveal";
 import GoogleReviewBadge from "./GoogleReviewBadge";
+import StoreShowcase from "./StoreShowcase";
 
 // Lazy-load heavy below-the-fold sections
 const FallingText = lazy(() => import("./FallingText"));
@@ -53,6 +54,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <HeroTextReveal />
             <Career />
             <About />
+            <StoreShowcase />
             <ClientMarquee />
             <ServiceReveal />
             <Work />
